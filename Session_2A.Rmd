@@ -9,3 +9,57 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+#set up to be version controlled using Github. To access usethis package, you can use library(usethis) or name of package & ::  For Git, only want to use it once, enter in console
+
+#Then "usethis::use_github" to set up repo with GitHub
+
+## Derivatives in R
+### use ?D in the console for information on derivatives in R
+```{r}
+fx <- expression(x^2)
+
+df_dx <- D(expr = fx , name = 'x')
+
+df_dx
+
+# names of objects go in double quotes
+
+# Evaluate the slope of (fx) at x = 831 "x<-831"
+
+x <- 831
+eval(expr = df_dx)
+```
+
+
+```{r}
+# to evaluate over a range of intervals
+
+x_2 <- seq(from = -10, to = 10, by = 0.5)
+
+eval(expr = df_dx)
+
+
+```
+
+```{r}
+gt <- expression(3 * (t ^ 2) - 4 * cos(t))
+
+dg_dt <- D(expr = gt, name = 't')
+
+
+```
+
+```{r}
+
+fx2 <- expression(4 / x^7 - 2 * x^ 5 + x - 1)
+
+df_dx2 <- D(expr = fx2, name = 'x2')
+
+
+```
+
+
+
+
+
+

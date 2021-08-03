@@ -171,7 +171,39 @@ pre code {
 </div>
 
 
+<p>#set up to be version controlled using Github. To access usethis package, you can use library(usethis) or name of package &amp; :: For Git, only want to use it once, enter in console</p>
+<p>#Then “usethis::use_github” to set up repo with GitHub</p>
+<div id="derivatives-in-r" class="section level2">
+<h2>Derivatives in R</h2>
+<div id="use-d-in-the-console-for-information-on-derivatives-in-r" class="section level3">
+<h3>use ?D in the console for information on derivatives in R</h3>
+<pre class="r"><code>fx &lt;- expression(x^2)
 
+df_dx &lt;- D(expr = fx , name = &#39;x&#39;)
+
+df_dx</code></pre>
+<pre><code>## 2 * x</code></pre>
+<pre class="r"><code># names of objects go in double quotes
+
+# Evaluate the slope of (fx) at x = 831 &quot;x&lt;-831&quot;
+
+x &lt;- 831
+eval(expr = df_dx)</code></pre>
+<pre><code>## [1] 1662</code></pre>
+<pre class="r"><code># to evaluate over a range of intervals
+
+x_2 &lt;- seq(from = -10, to = 10, by = 0.5)
+
+eval(expr = df_dx)</code></pre>
+<pre><code>## [1] 1662</code></pre>
+<pre class="r"><code>gt &lt;- expression(3 * (t ^ 2) - 4 * cos(t))
+
+dg_dt &lt;- D(expr = gt, name = &#39;t&#39;)</code></pre>
+<pre class="r"><code>fx2 &lt;- expression(4 / x^7 - 2 * x^ 5 + x - 1)
+
+df_dx2 &lt;- D(expr = fx2, name = &#39;x2&#39;)</code></pre>
+</div>
+</div>
 
 
 
